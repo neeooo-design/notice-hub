@@ -1,0 +1,8 @@
+.local/
+backend/target/
+backend/src/main/resources/static/
+frontend/node_modules/
+frontend/dist/
+.idea/
+*.iml
+*.log

@@ -1,0 +1,303 @@
+{
+  "executedAt": "2026-11-11T16:18:10.437312+08:00",
+  "baseUrl": "http://127.0.0.1:8088",
+  "passed": 59,
+  "total": 59,
+  "cases": [
+    {
+      "name": "前端首页与静态资源可访问",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "安全响应头已设置",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "MySQL 与 Redis 就绪",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "未登录请求返回401",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "伪造Token返回401",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "管理员可登录且返回权限清单",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "登录响应不暴露密码哈希",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "登录有效期约为7200秒",
+      "passed": true,
+      "detail": "7200"
+    },
+    {
+      "name": "登录态真实保存在Redis且有TTL",
+      "passed": true,
+      "detail": "7200"
+    },
+    {
+      "name": "管理员可创建不同角色的账号",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "重复用户名返回409",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "数据库保存带盐Argon2id哈希",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "员工可以阅读通知",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "员工不能发布通知",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "员工不能查询用户",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "员工不能读取角色管理接口",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "员工不能读取审计日志",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "员工不能伪造角色分配请求",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "编辑可以发布通知且创建人由后端确定",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "编辑不能伪造全局置顶",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "拒绝客户端注入createdBy字段",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "标题超长返回400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "无效分类返回400",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "另一位编辑不能修改他人通知",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "另一位编辑不能删除他人通知",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "编辑可以修改本人通知",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "旧版本更新返回409，阻止覆盖",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "管理员可以修改和置顶他人通知",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "编辑仍可修改已被管理员置顶的本人通知",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "编辑不能取消管理员置顶",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "搜索与分类组合筛选有效",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "我的发布仅含当前用户记录",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "分页大小上限为100",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "请求本人资料不会泄露其他用户",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "个人资料接口拒绝注入角色",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "可以更新自己的显示姓名",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "角色增加在原Token下一次请求生效",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "角色撤销立即阻止原Token创建通知",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "停用账号注销全部已有会话",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "已停用账号不能重新登录",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "重新启用账号后可以登录",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "初始管理员不能被停用",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "初始管理员角色受到保护",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "错误旧密码不能修改密码",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "过短密码被拒绝",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "新密码不得为空",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "修改密码后全部旧Token失效",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "旧密码无法再次登录",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "新密码可以登录",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "退出后旧Token立即失效",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Redis凭证过期后请求返回401",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "编辑可以删除本人通知，删除后不可读取",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "通知删除采用逻辑删除",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "关键操作均产生审计记录",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "审计接口不包含密码和Token",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "连续5次登录失败后触发429限流",
+      "passed": true,
+      "detail": "[401, 401, 401, 401, 401, 429]"
+    },
+    {
+      "name": "不存在的受保护接口返回404",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "错误HTTP方法返回405",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "5并发25次通知查询均成功",
+      "passed": true,
+      "detail": "median=13.2ms; p95=23.0ms; max=23.8ms"
+    }
+  ]
+}

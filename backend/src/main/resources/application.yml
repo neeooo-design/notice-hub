@@ -1,0 +1,51 @@
+server:
+  address: 127.0.0.1
+  port: 8088
+  error:
+    include-message: never
+    include-stacktrace: never
+spring:
+  application:
+    name: notice-hub
+  config:
+    import: optional:file:../.local/backend.properties
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/notice_hub?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: ${NOTICEHUB_DB_USER:noticehub_app}
+    password: ${NOTICEHUB_DB_PASSWORD:}
+    hikari:
+      maximum-pool-size: 8
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 2
+      timeout: 3s
+  jackson:
+    time-zone: Asia/Shanghai
+    deserialization:
+      fail-on-unknown-properties: true
+  flyway:
+    enabled: true
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    banner: false
+sa-token:
+  token-name: noticehub-token
+  token-prefix: Bearer
+  timeout: 7200
+  active-timeout: -1
+  auto-renew: false
+  is-concurrent: true
+  is-share: false
+  is-read-cookie: false
+  is-read-body: false
+  token-style: random-64
+  is-log: false
+app:
+  seed-demo: ${NOTICEHUB_SEED_DEMO:false}
+logging:
+  level:
+    com.noticehub: INFO

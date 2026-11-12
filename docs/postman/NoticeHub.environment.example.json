@@ -1,0 +1,42 @@
+{
+  "name": "Notice Hub Local",
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8088",
+      "enabled": true,
+      "type": "default"
+    },
+    {
+      "key": "username",
+      "value": "editor",
+      "enabled": true,
+      "type": "default"
+    },
+    {
+      "key": "password",
+      "value": "",
+      "enabled": true,
+      "type": "secret"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "enabled": true,
+      "type": "secret"
+    },
+    {
+      "key": "noticeId",
+      "value": "1",
+      "enabled": true,
+      "type": "default"
+    },
+    {
+      "key": "displayName",
+      "value": "陈可",
+      "enabled": true,
+      "type": "default"
+    }
+  ],
+  "_postman_variable_scope": "environment"
+}
