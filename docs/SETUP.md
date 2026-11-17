@@ -2,11 +2,11 @@
 
 本页供修改源码、调试和运行开发实例时使用。日常使用直接访问 [Notice Hub 云端系统](https://129.211.14.37)；服务器的部署、日志、更新与备份见 [云服务器部署与维护](云服务器部署与维护.md)。
 
-## 本机已经配置的内容
+## 开发环境
 
-项目目录：`C:\path\to\notice-hub`。后端在 `backend`，前端在 `frontend`。JDK为本机Temurin17，Maven复用本机已安装的3.10.0，Node为24.15.0。
+将仓库克隆到自己的工作目录。后端在 `backend`，前端在 `frontend`。需要 JDK 17、Maven、Node.js、MySQL 8 和 Redis 6 或更新版本；前端依赖按 `package-lock.json` 安装。Windows 脚本会查找本机 JDK 和 Maven，路径不匹配时调整 `scripts/tools.ps1`。
 
-MySQL新建 `notice_hub` 数据库和仅访问这个库的 `noticehub_app` 应用用户。密码写在 `.local/backend.properties`，已被 `.gitignore`排除。后端在其工作目录 `backend` 下通过 `spring.config.import`加载这个文件。
+在 MySQL 中新建 `notice_hub` 数据库和仅访问这个库的 `noticehub_app` 应用用户。自行生成密码，写入 `.local/backend.properties`；此目录已被 `.gitignore` 排除。后端在工作目录 `backend` 下通过 `spring.config.import` 加载配置。
 
 Redis使用现有WSL实例中的服务，数据库索引为2，Sa-Token前缀为 `noticehub-token`；登录失败计数前缀为 `noticehub:login-fail:`。启动脚本不会清空Redis数据库。
 
@@ -55,7 +55,7 @@ spring.datasource.password=填写应用数据库密码
 app.seed-demo=false
 ```
 
-首次初始化空数据库时，另设置 `app.seed-demo=true` 和 `app.seed-password=初始演示密码`。示例初始化要求密码至少10位，并只在用户表为空时运行。正常重启后不重新插入演示数据，也不会重设已修改的密码。当前本机已完成初始化。
+开发环境首次初始化空数据库时，另设置 `app.seed-demo=true` 和 `app.seed-password=自行生成的演示密码`。初始化要求密码至少10位，并只在用户表为空时运行。正常重启后不重新插入演示数据，也不会重设已修改的密码。初始化完成后关闭演示初始化开关；线上环境始终关闭该开关。
 
 需要迁移到另一台电脑时：先创建独立数据库和应用用户，安装JDK17、Maven、Node、MySQL8、Redis6或更高，按配置模板写入连接信息，再构建启动。`scripts/tools.ps1`包含当前本机的JDK与Maven路径，可以按新机器修改。Redis认证或地址变化可通过 `spring.data.redis.*`本地配置覆盖。
 

@@ -1,6 +1,6 @@
 # API说明
 
-基础地址：`http://127.0.0.1:8088/api`。请求和响应使用UTF-8 JSON；受保护接口携带 `noticehub-token: Bearer <token>`。所有列表最大每页100条。
+线上基础地址：`https://129.211.14.37/api`；自行部署时替换为自己的服务地址。请求和响应使用UTF-8 JSON；受保护接口携带 `noticehub-token: Bearer <token>`。所有列表最大每页100条。
 
 成功响应为 `{"code":0,"message":"操作成功","data":...}`。失败使用实际HTTP错误状态，响应体中 `code`为同一状态、`message`为可读说明、`data`为null。列表data包含 `items,total,page,size`。
 
@@ -31,7 +31,7 @@
 登录：
 
 ```json
-{"username":"editor","password":"填写本机演示密码"}
+{"username":"your_username","password":"填写管理员分配的密码"}
 ```
 
 data包含 `token,tokenName,expiresIn,user`。user包含 `id,username,displayName,enabled,protectedAccount,createdAt,roles,permissions`，不会包含密码或密码哈希。

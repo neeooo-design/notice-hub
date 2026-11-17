@@ -1,5 +1,6 @@
 * text=auto
 .gitattributes text eol=lf
+.gitignore text eol=lf
 *.example text eol=lf
 *.java text eol=lf
 *.vue text eol=lf

@@ -162,8 +162,10 @@ print('temporary accounts removed')
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--credentials", type=Path, default=ROOT / ".local/cloud-admin-129.211.14.37.json")
-    parser.add_argument("--ssh-alias", default="noticehub-cloud")
+    parser.add_argument("--credentials", type=Path, required=True,
+                        help="Path to a private JSON containing url, username and initialPassword")
+    parser.add_argument("--ssh-alias", required=True,
+                        help="Locally configured SSH alias for the target deployment")
     args = parser.parse_args()
     credentials = json.loads(args.credentials.read_text(encoding="utf-8-sig"))
     BASE, ALIAS = credentials["url"].rstrip("/"), args.ssh_alias
