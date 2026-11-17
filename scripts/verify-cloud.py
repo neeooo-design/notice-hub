@@ -11,6 +11,7 @@ import re
 import secrets
 import subprocess
 import sys
+import time
 from urllib.parse import urlsplit
 
 import requests
@@ -19,6 +20,8 @@ ROOT = Path(__file__).resolve().parents[1]
 RESULTS, USER_IDS, TOKENS = [], [], []
 SESSION = requests.Session()
 SESSION.trust_env = False
+LAST_REQUEST = 0.0
+LAST_LOGIN = 0.0
 
 
 def check(name, passed):
@@ -29,6 +32,16 @@ def check(name, passed):
 
 
 def request(method, path, token=None, body=None, expected=200):
+    global LAST_REQUEST, LAST_LOGIN
+    # Respect production ingress limits; tests of account throttling must reach the app.
+    now = time.monotonic()
+    earliest = LAST_REQUEST + 0.12
+    if path == "/auth/login":
+        earliest = max(earliest, LAST_LOGIN + 6.1)
+    time.sleep(max(0, earliest - now))
+    LAST_REQUEST = time.monotonic()
+    if path == "/auth/login":
+        LAST_LOGIN = LAST_REQUEST
     headers = {"noticehub-token": "Bearer " + token} if token else {}
     r = SESSION.request(method, BASE + "/api" + path, json=body, headers=headers, timeout=20)
     if expected is None:
