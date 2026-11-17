@@ -1,0 +1,11 @@
+[Unit]
+Description=Check Notice Hub short-lived TLS certificate every six hours
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=6h
+RandomizedDelaySec=15min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

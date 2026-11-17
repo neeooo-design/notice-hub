@@ -1,6 +1,12 @@
 # Notice Hub · 内部通知与权限管理系统
 
-Notice Hub 是一个已经接通 MySQL 和 Redis 的本地完整应用，用于学习 Spring Boot 后端、登录认证、角色权限和数据归属控制。后端、Vue 前端、数据库迁移、验收脚本和学习文档都保存在本项目中。
+Notice Hub 是一个接通 MySQL 和 Redis 的完整应用，用于学习 Spring Boot 后端、登录认证、角色权限和数据归属控制。项目支持本机运行和 Ubuntu 云服务器部署，包含 Vue 前端、数据库迁移、验收脚本和学习文档。
+
+## 云端使用
+
+访问 [Notice Hub 云端系统](https://129.211.14.37)，用户名为 `admin`，初始密码保存在本机 `.local/云服务器登录信息.md`。首次登录后，在「个人设置」修改密码，再通过「用户管理」创建团队成员。云端只初始化一个管理员，本机演示账号的密码不适用于云端。
+
+云端已配置 HTTPS、开机自启、证书自动续期和每日备份。首次部署步骤与原因、更新、日志和恢复操作见 [云服务器部署与维护](docs/云服务器部署与维护.md)，实际检查结果见 [云端部署验收](docs/云端部署验收.md)。
 
 ## 立即使用
 
@@ -42,7 +48,7 @@ Notice Hub 是一个已经接通 MySQL 和 Redis 的本地完整应用，用于�
 |---|---|
 | JDK 17 / Spring Boot 3.5.16 / Maven | 单个后端服务，按职责分包 |
 | MyBatis-Plus 3.5.15 / MySQL 8 | 基础实体CRUD + 显式参数化SQL |
-| Sa-Token 1.46.0 / Redis 8 | 服务端会话与权限检查 |
+| Sa-Token 1.46.0 / Redis | 服务端会话与权限检查；本机 Redis 8、云端 Ubuntu 仓库 Redis 7 |
 | Flyway | 按版本自动执行数据库迁移 |
 | Spring Security Crypto / Bouncy Castle | Argon2id 密码哈希；没有同时启用第二套登录框架 |
 | Vue 3 / Vue Router / Vite / Lucide | 前端界面；构建后由后端同源提供 |
@@ -69,6 +75,7 @@ notice-hub/
 │  ├─ state.js              请求封装、会话和界面状态
 │  └─ main.js               路由和页面入口
 ├─ scripts/                 构建、启动、停止、真实接口验收
+├─ deploy/linux/            云端初始化、systemd、Nginx、备份与更新
 ├─ docs/                    设计、教学、API和验收材料
 └─ .local/                  本机密码、运行PID、日志；不进入Git
 ```

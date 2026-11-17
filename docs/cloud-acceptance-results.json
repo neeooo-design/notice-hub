@@ -1,0 +1,180 @@
+{
+  "executedAt": "2026-11-17T11:04:18.051525+08:00",
+  "baseUrl": "https://129.211.14.37",
+  "passed": 43,
+  "total": 43,
+  "cases": [
+    {
+      "name": "HTTPS trusted certificate and frontend",
+      "passed": true
+    },
+    {
+      "name": "Bundled JavaScript and CSS accessible",
+      "passed": true
+    },
+    {
+      "name": "Security response headers",
+      "passed": true
+    },
+    {
+      "name": "HTTP redirects to HTTPS",
+      "passed": true
+    },
+    {
+      "name": "MySQL and Redis readiness",
+      "passed": true
+    },
+    {
+      "name": "Anonymous access denied",
+      "passed": true
+    },
+    {
+      "name": "Forged token denied",
+      "passed": true
+    },
+    {
+      "name": "Protected admin login and permissions",
+      "passed": true
+    },
+    {
+      "name": "Login response contains no password",
+      "passed": true
+    },
+    {
+      "name": "Session lifetime is two hours",
+      "passed": true
+    },
+    {
+      "name": "Admin reads /auth/me",
+      "passed": true
+    },
+    {
+      "name": "Admin reads /dashboard",
+      "passed": true
+    },
+    {
+      "name": "Admin reads /users",
+      "passed": true
+    },
+    {
+      "name": "Admin reads /roles",
+      "passed": true
+    },
+    {
+      "name": "Admin reads /audit-logs",
+      "passed": true
+    },
+    {
+      "name": "Cloud demo seed disabled",
+      "passed": true
+    },
+    {
+      "name": "Admin creates editor and employee accounts",
+      "passed": true
+    },
+    {
+      "name": "Employee can read notices",
+      "passed": true
+    },
+    {
+      "name": "Employee cannot publish",
+      "passed": true
+    },
+    {
+      "name": "Employee denied /users",
+      "passed": true
+    },
+    {
+      "name": "Employee denied /roles",
+      "passed": true
+    },
+    {
+      "name": "Employee denied /audit-logs",
+      "passed": true
+    },
+    {
+      "name": "Editor publishes with server-assigned owner",
+      "passed": true
+    },
+    {
+      "name": "Another editor cannot edit",
+      "passed": true
+    },
+    {
+      "name": "Another editor cannot delete",
+      "passed": true
+    },
+    {
+      "name": "Client cannot inject owner",
+      "passed": true
+    },
+    {
+      "name": "Editor cannot pin globally",
+      "passed": true
+    },
+    {
+      "name": "Owner edits and increments version",
+      "passed": true
+    },
+    {
+      "name": "Stale update rejected",
+      "passed": true
+    },
+    {
+      "name": "Admin can pin another user's notice",
+      "passed": true
+    },
+    {
+      "name": "Search finds new notice",
+      "passed": true
+    },
+    {
+      "name": "Role grant updates existing session",
+      "passed": true
+    },
+    {
+      "name": "Role revocation effective immediately",
+      "passed": true
+    },
+    {
+      "name": "Disable revokes all sessions",
+      "passed": true
+    },
+    {
+      "name": "Disabled user cannot log in",
+      "passed": true
+    },
+    {
+      "name": "Password change revokes session",
+      "passed": true
+    },
+    {
+      "name": "Logout invalidates token",
+      "passed": true
+    },
+    {
+      "name": "Deleted notice is inaccessible",
+      "passed": true
+    },
+    {
+      "name": "Audit records contain key changes",
+      "passed": true
+    },
+    {
+      "name": "Audit response contains no credentials",
+      "passed": true
+    },
+    {
+      "name": "Five failed logins trigger throttling",
+      "passed": true
+    },
+    {
+      "name": "Protected administrator cannot be disabled",
+      "passed": true
+    },
+    {
+      "name": "Only this run's temporary data removed",
+      "passed": true
+    }
+  ]
+}

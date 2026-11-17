@@ -1,0 +1,17 @@
+# Real credentials belong in /etc/noticehub/application-prod.properties, mode 0640.
+server.address=127.0.0.1
+server.port=8088
+server.forward-headers-strategy=native
+spring.datasource.url=jdbc:mysql://127.0.0.1:3306/notice_hub?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+spring.datasource.username=noticehub_app
+spring.datasource.password=REPLACE_WITH_DATABASE_PASSWORD
+spring.data.redis.host=127.0.0.1
+spring.data.redis.port=6379
+spring.data.redis.database=2
+spring.data.redis.password=REPLACE_WITH_REDIS_PASSWORD
+app.seed-demo=false
+# Enable only for the first startup of an empty database, then disable and remove password.
+app.bootstrap-admin.enabled=true
+app.bootstrap-admin.username=admin
+app.bootstrap-admin.display-name=Administrator
+app.bootstrap-admin.password=REPLACE_WITH_STRONG_INITIAL_ADMIN_PASSWORD

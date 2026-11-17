@@ -1,0 +1,33 @@
+[Unit]
+Description=Notice Hub application
+Wants=network-online.target mysql.service redis-server.service
+After=network-online.target mysql.service redis-server.service
+
+[Service]
+Type=simple
+User=noticehub
+Group=noticehub
+WorkingDirectory=/opt/notice-hub
+ExecStart=/usr/bin/java -Xms128m -Xmx512m -XX:MaxMetaspaceSize=192m -Dfile.encoding=UTF-8 -Duser.timezone=Asia/Shanghai -jar /opt/notice-hub/current/app.jar --spring.config.additional-location=file:/etc/noticehub/application-prod.properties
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+StateDirectory=noticehub
+MemoryMax=1G
+TasksMax=256
+LimitNOFILE=65535
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Back up Notice Hub database and configuration
+After=mysql.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/notice-hub/tools/backup.py
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/backups/noticehub
